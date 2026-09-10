@@ -55,7 +55,7 @@ const Contact = () => {
               </div>
               <div className="contact-item">
                 <div className="icon"><i className="fas fa-user-graduate"></i><span>Education</span></div>
-                <p>: Polytechnic College Mudhol</p>
+                <p>: Diploma in Computer Science & Engineering, GPT Mudhol</p>
               </div>
               <div className="contact-item">
                 <div className="icon"><i className="fas fa-phone"></i><span>Mobile</span></div>

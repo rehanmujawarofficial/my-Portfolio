@@ -1,8 +1,6 @@
 // src/components/Header.jsx
 import React from 'react';
 
-
-
 const Header = () => {
   return (
     <header className="container header active" id="home">
@@ -20,16 +18,16 @@ const Header = () => {
         </div>
         <div className="right-header">
           <h1 className="name">
-            Hi, I'm <span>Rehan Mujawar.</span>
+            Hi, I'm <span>Rihan Mujawar.</span>
           </h1>
           <div className="animated-text">
-            <span className="role">Full Stack Developer</span>
+            <span className="role">Full-Stack Developer</span>
             <span className="role">Cybersecurity Enthusiast</span>
-            <span className="role">UI/UX Designer</span>
+            <span className="role">Systems Engineer</span>
           </div>
           <p>
-            I build elegant digital solutions that combine stunning user experiences with rock-solid security.
-            From sleek frontends to secure backends, I deliver full-circle solutions that matter.
+            Aspiring Full-Stack Developer and Cybersecurity Enthusiast with hands-on experience in building
+            secure, scalable web applications, backend architecture, and systems engineering projects.
           </p>
           <div className="btn-con">
             <a href="/rehan-CV.pdf" download className="main-btn">
