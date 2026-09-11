@@ -1,4 +1,4 @@
-* {
+ * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -370,47 +370,78 @@ section {
   text-transform: uppercase;
 }
 
+.about-achievements {
+  padding-top: 1.5rem;
+}
+
+.about-achievements h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-achievements ul {
+  margin-left: 1.2rem;
+  color: var(--color-grey-1);
+  line-height: 1.8rem;
+}
+
+.about-achievements li {
+  list-style: disc;
+}
+
 .about-stats {
   padding-bottom: 4rem;
 }
-.about-stats .progress-bars {
+.about-stats .skill-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-gap: 1.5rem;
 }
-.about-stats .progress-bars .progress-bar {
+
+.skill-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  padding: 1.25rem 0.75rem;
+  border-radius: 16px;
+  border: 1px solid var(--color-grey-5);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease-in-out;
 }
-.about-stats .progress-bars .progress-bar .prog-title {
-  text-transform: uppercase;
-  font-weight: 500;
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.22);
 }
-.about-stats .progress-bars .progress-bar .progress-con {
+
+.skill-card .skill-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(39, 174, 96, 0.12);
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
 }
-.about-stats .progress-bars .progress-bar .progress-con .prog-text {
-  color: var(--color-grey-2);
+
+.skill-card .skill-icon i {
+  font-size: 2rem;
+  color: var(--color-secondary);
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress {
-  width: 100%;
-  height: 0.45rem;
-  background-color: var(--color-grey-4);
-  margin-left: 1rem;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
+
+.skill-card .skill-name {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  font-weight: 500;
+  color: var(--color-grey-1);
+  text-align: center;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  transition: all 0.4s ease-in-out;
-  width: 0;
-}
+
 /* Skill Categories Filter */
 .skills-categories {
   display: flex;
@@ -439,43 +470,6 @@ section {
   background-color: var(--color-secondary);
 }
 
-.progress-bar.dev,
-.progress-bar.security,
-.progress-bar.networking {
-  display: none;
-}
-
-.progress-bar.dev.show,
-.progress-bar.security.show,
-.progress-bar.networking.show {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Progress bar animations */
-.progress-bar {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.5s forwards;
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.progress-bar:nth-child(1) { animation-delay: 0.1s; }
-.progress-bar:nth-child(2) { animation-delay: 0.2s; }
-.progress-bar:nth-child(3) { animation-delay: 0.3s; }
-.progress-bar:nth-child(4) { animation-delay: 0.4s; }
-.progress-bar:nth-child(5) { animation-delay: 0.5s; }
-.progress-bar:nth-child(6) { animation-delay: 0.6s; }
-.progress-bar:nth-child(7) { animation-delay: 0.7s; }
-.progress-bar:nth-child(8) { animation-delay: 0.8s; }
-.progress-bar:nth-child(9) { animation-delay: 0.9s; }
-.progress-bar:nth-child(10) { animation-delay: 1.0s; }
 .stat-title {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -1053,9 +1047,18 @@ section {
     transform: translateX(-50%);
     width: 100%;
     background-color: var(--color-grey-5);
+    z-index: 30;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
   }
   .controls .control {
-    margin: 1rem 0.3rem;
+    margin: 0.75rem 0.3rem;
+    width: 48px;
+    height: 48px;
+  }
+
+  .about-stats .skill-cards {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
 
   .about-container {
@@ -1078,7 +1081,7 @@ section {
   }
 
   .container {
-    padding: 2rem 2.5rem !important;
+    padding: 2rem 2.5rem 6rem !important;
   }
 
   .about-stats .progress-bars {

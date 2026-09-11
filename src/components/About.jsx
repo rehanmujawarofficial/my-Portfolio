@@ -1,35 +1,63 @@
 // src/components/About.jsx
 import React, { useEffect } from 'react';
 
+const skillItems = [
+  { skill: 'HTML5', icon: 'fab fa-html5', category: 'dev' },
+  { skill: 'CSS3', icon: 'fab fa-css3-alt', category: 'dev' },
+  { skill: 'JavaScript', icon: 'fab fa-js-square', category: 'dev' },
+  { skill: 'React.js', icon: 'fab fa-react', category: 'dev' },
+  { skill: 'Node.js', icon: 'fab fa-node-js', category: 'dev' },
+  { skill: 'Python', icon: 'fab fa-python', category: 'dev' },
+  { skill: 'JAVA', icon: 'fab fa-java', category: 'dev' },
+  { skill: 'MongoDB', icon: 'fas fa-database', category: 'dev' },
+  { skill: 'MySQL', icon: 'fas fa-database', category: 'dev' },
+  { skill: 'Firebase', icon: 'fas fa-fire', category: 'dev' },
+  { skill: 'Git', icon: 'fab fa-git-alt', category: 'dev' },
+  { skill: 'GitHub', icon: 'fab fa-github', category: 'dev' },
+  { skill: 'VS Code', icon: 'fas fa-code', category: 'dev' },
+  { skill: 'JIRA', icon: 'fas fa-tasks', category: 'dev' },
+  { skill: 'Netlify', icon: 'fas fa-cloud', category: 'dev' },
+  { skill: 'Linux Kernel', icon: 'fab fa-linux', category: 'security' },
+  { skill: 'Kali Linux', icon: 'fab fa-linux', category: 'security' },
+  { skill: 'C', icon: 'fas fa-terminal', category: 'security' },
+  { skill: 'Bash', icon: 'fas fa-terminal', category: 'security' },
+  { skill: 'Nmap', icon: 'fas fa-search', category: 'networking' },
+  { skill: 'Wireshark', icon: 'fas fa-network-wired', category: 'networking' },
+  { skill: 'Burp Suite', icon: 'fas fa-bug', category: 'security' },
+  { skill: 'Metasploit', icon: 'fas fa-bolt', category: 'security' },
+  { skill: 'Aircrack-ng', icon: 'fas fa-wifi', category: 'networking' },
+  { skill: 'John the Ripper', icon: 'fas fa-key', category: 'security' },
+  { skill: 'OWASP ZAP', icon: 'fas fa-shield-virus', category: 'security' },
+  { skill: 'Docker', icon: 'fab fa-docker', category: 'security' },
+  { skill: 'Cybersecurity', icon: 'fas fa-shield-alt', category: 'security' },
+  { skill: 'Ethical Hacking', icon: 'fas fa-user-secret', category: 'security' },
+  { skill: 'Networking', icon: 'fas fa-network-wired', category: 'networking' },
+  { skill: 'Vulnerability Assessment', icon: 'fas fa-bug', category: 'security' }
+];
+
 const About = () => {
   useEffect(() => {
     const skillCategories = document.querySelectorAll('.skill-category');
-    const progressBars = document.querySelectorAll('.progress-bar');
+    const skillCards = document.querySelectorAll('.skill-card');
 
-    progressBars.forEach((bar, index) => {
-      setTimeout(() => {
-        bar.classList.add('show');
-      }, 100 * index);
-    });
+    const applyCategoryFilter = (selectedCategory) => {
+      skillCategories.forEach((category) => {
+        category.classList.toggle('active', category.dataset.category === selectedCategory);
+      });
+
+      skillCards.forEach((card) => {
+        const shouldShow = selectedCategory === 'all' || card.dataset.category === selectedCategory;
+        card.style.display = shouldShow ? 'flex' : 'none';
+      });
+    };
 
     skillCategories.forEach((category) => {
       category.addEventListener('click', () => {
-        skillCategories.forEach((cat) => cat.classList.remove('active'));
-        category.classList.add('active');
-
-        const selectedCategory = category.dataset.category;
-
-        progressBars.forEach((bar) => {
-          if (selectedCategory === 'all') {
-            bar.style.display = 'flex';
-          } else if (bar.classList.contains(selectedCategory)) {
-            bar.style.display = 'flex';
-          } else {
-            bar.style.display = 'none';
-          }
-        });
+        applyCategoryFilter(category.dataset.category);
       });
     });
+
+    applyCategoryFilter('all');
   }, []);
 
   return (
@@ -50,6 +78,14 @@ const About = () => {
             tools. Proven leadership experience through internship projects, strong problem-solving abilities,
             and a passion for ethical hacking and innovative technology solutions.
           </p>
+
+          <div className="about-achievements">
+            <h4>Achievements</h4>
+            <ul>
+              <li>Secured 1st Prize in Science Exhibition during high school (Grades 8, 9, and 10).</li>
+              <li>Participated in (National Level India Skills Competition).</li>
+            </ul>
+          </div>
         </div>
 
         <div className="right-about">
@@ -78,41 +114,13 @@ const About = () => {
           <button className="skill-category" data-category="networking">Networking</button>
         </div>
 
-        <div className="progress-bars">
-          {[
-            { skill: 'HTML5', percent: '88%', className: 'html', category: 'dev' },
-            { skill: 'CSS3', percent: '86%', className: 'css', category: 'dev' },
-            { skill: 'JavaScript', percent: '82%', className: 'js', category: 'dev' },
-            { skill: 'React.js', percent: '84%', className: 'react', category: 'dev' },
-            { skill: 'Node.js', percent: '80%', className: 'node', category: 'dev' },
-            { skill: 'Python', percent: '85%', className: 'python', category: 'dev' },
-            { skill: 'JAVA', percent: '78%', className: 'java', category: 'dev' },
-            { skill: 'Rust', percent: '72%', className: 'rust', category: 'security' },
-            { skill: 'MongoDB', percent: '82%', className: 'mongodb', category: 'dev' },
-            { skill: 'MySQL', percent: '80%', className: 'mysql', category: 'dev' },
-            { skill: 'Firebase', percent: '75%', className: 'firebase', category: 'dev' },
-            { skill: 'Git', percent: '88%', className: 'html', category: 'dev' },
-            { skill: 'GitHub', percent: '90%', className: 'js', category: 'dev' },
-            { skill: 'VS Code', percent: '90%', className: 'css', category: 'dev' },
-            { skill: 'JIRA', percent: '75%', className: 'react', category: 'dev' },
-            { skill: 'Netlify', percent: '82%', className: 'node', category: 'dev' },
-            { skill: 'Linux Kernel', percent: '85%', className: 'linuxsec', category: 'security' },
-            { skill: 'C', percent: '78%', className: 'nmap', category: 'security' },
-            { skill: 'Bash', percent: '82%', className: 'burp', category: 'security' },
-            { skill: 'Docker', percent: '80%', className: 'wireshark', category: 'security' },
-            { skill: 'Cybersecurity', percent: '83%', className: 'osint', category: 'security' },
-            { skill: 'Ethical Hacking', percent: '80%', className: 'pentest', category: 'security' },
-            { skill: 'Networking', percent: '76%', className: 'networking', category: 'networking' },
-            { skill: 'Vulnerability Assessment', percent: '75%', className: 'vuln', category: 'security' }
-          ].map((item, index) => (
-            <div className={`progress-bar ${item.category}`} key={index}>
-              <p className="prog-title">{item.skill}</p>
-              <div className="progress-con">
-                <p className="prog-text">{item.percent}</p>
-                <div className="progress">
-                  <span className={item.className} style={{ width: item.percent }}></span>
-                </div>
+        <div className="skill-cards">
+          {skillItems.map((item, index) => (
+            <div className="skill-card" data-category={item.category} key={index}>
+              <div className="skill-icon">
+                <i className={item.icon}></i>
               </div>
+              <span className="skill-name">{item.skill}</span>
             </div>
           ))}
         </div>
