@@ -46,27 +46,27 @@ const Contact = () => {
             </p>
             <div className="contact-info">
               <div className="contact-item">
-                <div className="icon"><i className="fas fa-map-marker-alt"></i><span>Location</span></div>
-                <p>: India , Karnataka , Terdal:587315</p>
+                <div className="icon"><i className="fas fa-map-marker-alt"></i><span>Location : </span></div>
+                <p>India , Karnataka , Terdal:587315</p>
               </div>
               <div className="contact-item">
-                <div className="icon"><i className="fas fa-envelope"></i><span>Email</span></div>
-                <p>: rehan.learning@hotmail.com</p>
+                <div className="icon"><i className="fas fa-envelope"></i><span>Email : </span></div>
+                <p>rehan.learning@hotmail.com</p>
               </div>
               <div className="contact-item">
-                <div className="icon"><i className="fas fa-user-graduate"></i><span>Education</span></div>
-                <p>: Diploma in Computer Science & Engineering, GPT Mudhol</p>
+                <div className="icon"><i className="fas fa-user-graduate"></i><span>Education :</span></div>
+                <p>Diploma in CSE, GPT Mudhol</p>      
               </div>
               <div className="contact-item">
-                <div className="icon"><i className="fas fa-phone"></i><span>Mobile</span></div>
-                <p>: +91 6362197300</p>
+                <div className="icon"><i className="fas fa-phone"></i><span>Mobile : </span></div>
+                <p>+91 6362197300</p>
               </div>
               <div className="contact-item">
-                <div className="icon"><i className="fas fa-globe-africa"></i><span>Languages</span></div>
-                <p>: English , Kannada , Hindi</p>
+                <div className="icon"><i className="fas fa-globe-africa"></i><span>Languages :</span></div>
+                <p>English , Kannada , Hindi</p>
               </div>
             </div>
-            <div className="contact-icons">
+            <div className="contact-icons"> 
               <div className="contact-icon">
                 <a href="https://twitter.com" target="_blank" rel="noreferrer">
                   <i className="fab fa-twitter"></i>

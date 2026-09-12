@@ -6,13 +6,13 @@ const projects = [
     tech: 'Linux Kernel, C, Rust, Bash, Python, GRUB, systemd, Docker',
     role: 'Systems Engineer / Linux Developer',
     impact: 'Built a custom Linux distribution focused on operating-system development, kernel internals, and low-level system engineering.',
-    image: 'img/port1.png',
+    image: 'img/rweezyos.png',
     github: 'https://github.com/RihanMujawar/rweezyos',
     desc: 'Custom Linux distribution with reusable build workflows, system service integration, and kernel/userspace interaction improvements.',
   },
   {
     title: 'LLM From Scratch',
-    image: 'img/port3.png',
+    image: 'img/llm-from-scrach.png',
     tech: 'Python, PyTorch, Transformers, CUDA',
     role: 'AI/ML Developer',
     impact: 'Implemented an end-to-end transformer training pipeline, including pretraining, fine-tuning, and post-training experimentation.',
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: 'Rweezy',
-    image: 'img/port4.png',
+    image: 'img/rweezy.png',
     tech: 'React 19, TypeScript, Kotlin, Jetpack Compose, Node.js, PostgreSQL, Docker, Twilio, Mapbox',
     role: 'Full-Stack Developer / Team Lead',
     impact: 'Architected a distributed multi-service marketplace with geolocation discovery, live tracking, secure authentication, and Dockerized deployment.',
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     title: 'End-to-End Encrypted Messaging App',
-    image: 'img/port5.png',
+    image: 'img/e2ee.png',
     tech: 'Node.js, WebSockets, MongoDB, Web Crypto API, ECDH, AES-GCM, HKDF',
     role: 'Backend Developer / Security Engineer',
     impact: 'Developed a real-time secure messaging platform with client-side encryption, low-latency delivery, and optimized storage.',
@@ -57,7 +57,7 @@ const projects = [
   },
   {
     title: 'Portfolio Website',
-    image: 'img/pro1.png',
+    image: 'img/portfolio.png',
     tech: 'React, CSS',
     role: 'Full-Stack Developer',
     impact: 'Showcases projects, skills, and experience in a modern, responsive portfolio layout.',
