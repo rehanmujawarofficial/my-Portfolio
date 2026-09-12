@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const projects = [
   {
@@ -29,11 +29,12 @@ const projects = [
     desc: 'Microservices-based marketplace combining a React web frontend, native Android app, and secure backend services.',
   },
   {
-    title: 'End-to-End Encrypted Messaging Web App',
+    title: 'End-to-End Encrypted Messaging App',
     image: 'img/port5.png',
     tech: 'Node.js, WebSockets, MongoDB, Web Crypto API, ECDH, AES-GCM, HKDF',
     role: 'Backend Developer / Security Engineer',
     impact: 'Developed a real-time secure messaging platform with client-side encryption, low-latency delivery, and optimized storage.',
+    github: 'https://github.com/RihanMujawar/e2ee',
     desc: 'Real-time messaging application focused on E2EE using Web Crypto, ECDH, AES-GCM, and secure MongoDB schema design.',
   },
   {
@@ -43,7 +44,6 @@ const projects = [
     role: 'Full-Stack Developer',
     impact: 'Built a hands-free AI personal assistant with voice-driven commands, local automation, and interactive web controls.',
     github: 'https://github.com/RihanMujawar/AI007/',
-    live: 'https://myai007.netlify.app/',
     desc: 'AI desktop assistant combining Python automation, Gemini API integration, and a React-based frontend.',
   },
   {
@@ -53,7 +53,6 @@ const projects = [
     role: 'Backend Developer',
     impact: 'Automated daily tasks and enabled natural-language system workflows for a more efficient user experience.',
     github: 'https://github.com/RihanMujawar/personal-AI-assistant',
-    live: 'https://github.com/RihanMujawar/personal-AI-assistant',
     desc: 'Voice-enabled personal assistant built in Python using Gemini APIs for local automation and task execution.',
   },
   {
@@ -69,6 +68,12 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
+  const handleProjectToggle = (index) => {
+    setActiveProject((current) => (current === index ? null : index));
+  };
+
   return (
     <section className="container" id="portfolio">
       <div className="main-title">
@@ -88,8 +93,19 @@ const Portfolio = () => {
       </div>
       <div className="portfolios">
         {projects.map((project, index) => (
-          <div className="portfolio-item" key={index}>
-            <div className="image">
+          <div className={`portfolio-item ${activeProject === index ? 'active' : ''}`} key={index}>
+            <div
+              className="image"
+              onClick={() => handleProjectToggle(index)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  handleProjectToggle(index);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
               <img src={project.image} alt={project.title} />
               <div className="hover-items">
                 <h3>{project.title}</h3>
